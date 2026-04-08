@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, make_response
 from xhtml2pdf import pisa
 from io import BytesIO
+import os  # <- added for Render deployment
 
 app = Flask(__name__)
 
@@ -57,5 +58,8 @@ def index():
     return render_template("index.html")
 
 
+# ---- Updated for Render deployment ----
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Use host 0.0.0.0 and port from Render environment
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
