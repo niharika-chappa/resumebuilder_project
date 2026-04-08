@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #e9e9e9;
+    margin: 0;
+    padding: 0;
+    color: #111;
+}
+
+/* ================= FORM PAGE ================= */
+
+.form-container {
+    width: 70%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 14px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border: 1px solid black;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #222;
+}
+
+/* ================= RESUME PAGE ================= */
+
+.resume-wrapper {
+    width: 85%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.top-left h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.job-title {
+    margin-top: 6px;
+    font-size: 16px;
+    color: #444;
+}
+
+.top-right {
+    text-align: right;
+}
+
+.profile-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 2px 0;
+    font-size: 13px;
+}
+
+/* Divider */
+.divider {
+    border-bottom: 2px solid black;
+    margin: 18px 0 25px 0;
+}
+
+/* GRID */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 25px;
+}
+
+/* LEFT COLUMN */
+.left-column {
+    border-right: 1px solid #ccc;
+    padding-right: 20px;
+}
+
+/* BLOCK */
+.block {
+    margin-bottom: 25px;
+}
+
+.block h2 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.block p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* LISTS */
+.block ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.block ul li {
+    font-size: 14px;
+    margin-bottom: 7px;
+    line-height: 1.5;
+}
+
+.left-column .block ul li,
+.right-column .block ul li {
+    font-size: 14px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}

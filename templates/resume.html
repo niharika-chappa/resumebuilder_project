@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ data.name }} - Resume</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="resume-wrapper">
+
+    <!-- HEADER -->
+    <div class="top-header">
+        <div class="top-left">
+            <h1>{{ data.name }}</h1>
+            <p class="job-title">{{ data.title }}</p>
+        </div>
+
+        <div class="top-right">
+            {% if data.photo %}
+                <img src="{{ data.photo }}" class="profile-photo">
+            {% endif %}
+
+            <div class="contact-info">
+                <p>{{ data.location }}</p>
+                <p>{{ data.phone }}</p>
+                <p>{{ data.email }}</p>
+                <p>{{ data.linkedin }}</p>
+                <p>{{ data.github }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- MAIN GRID -->
+    <div class="resume-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+
+            <div class="block">
+                <h2>SKILLS</h2>
+                <ul>
+                    {% for skill in data.skills %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block">
+                <h2>LANGUAGES</h2>
+                <ul>
+                    {% for lang in data.languages %}
+                        {% if lang.strip() %}
+                            <li>{{ lang }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block">
+                <h2>CERTIFICATIONS</h2>
+                <ul>
+                    {% for cert in data.certifications.split('\n') %}
+                        {% if cert.strip() %}
+                            <li>{{ cert }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block">
+                <h2>EDUCATION</h2>
+                <p>{{ data.education }}</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+
+            <div class="block">
+                <h2>SUMMARY</h2>
+                <p>{{ data.summary }}</p>
+            </div>
+
+            <div class="block">
+                <h2>INTERNSHIPS</h2>
+                <ul>
+                    {% for intern in data.internships.split('\n') %}
+                        {% if intern.strip() %}
+                            <li>{{ intern }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block">
+                <h2>PROJECTS</h2>
+                <ul>
+                    {% for proj in data.projects.split('\n') %}
+                        {% if proj.strip() %}
+                            <li>{{ proj }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="block">
+                <h2>EXPERIENCE</h2>
+                <ul>
+                    {% for exp in data.experience.split('\n') %}
+                        {% if exp.strip() %}
+                            <li>{{ exp }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

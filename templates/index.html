@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Resume Builder</h1>
+    <p class="subtitle">Fill details to generate a professional resume</p>
+
+    <form method="POST">
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Job Title</label>
+        <input type="text" name="title" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone</label>
+        <input type="text" name="phone" required>
+
+        <label>Location</label>
+        <input type="text" name="location" required>
+
+        <label>Profile Photo URL (Optional)</label>
+        <input type="text" name="photo" placeholder="Paste direct image URL (.jpg/.png)">
+
+        <label>LinkedIn</label>
+        <input type="text" name="linkedin">
+
+        <label>GitHub</label>
+        <input type="text" name="github">
+
+        <label>Professional Summary</label>
+        <textarea name="summary" rows="4" required></textarea>
+
+        <label>Skills (comma separated)</label>
+        <input type="text" name="skills" placeholder="Python, Flask, HTML, CSS" required>
+
+        <label>Languages (comma separated)</label>
+        <input type="text" name="languages" placeholder="English, Hindi, Spanish">
+
+        <label>Certifications (each point in new line)</label>
+        <textarea name="certifications" rows="3" placeholder="AWS Certified Developer – Associate"></textarea>
+
+        <label>Internships (each point in new line)</label>
+        <textarea name="internships" rows="3"></textarea>
+
+        <label>Education</label>
+        <textarea name="education" rows="3" required></textarea>
+
+        <label>Projects (each point in new line)</label>
+        <textarea name="projects" rows="5" required></textarea>
+
+        <label>Experience (each point in new line)</label>
+        <textarea name="experience" rows="5"></textarea>
+
+        <button type="submit">Preview Resume</button>
+        <button type="submit" name="download_pdf">Download as PDF</button>
+
+    </form>
+</div>
+
+</body>
+</html>

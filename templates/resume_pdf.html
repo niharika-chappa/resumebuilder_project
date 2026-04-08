@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data.name }} - Resume PDF</title>
+
+    <style>
+        @page {
+            size: A4;
+            margin: 8mm;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            color: #111;
+        }
+
+        .resume-wrapper {
+            width: 100%;
+        }
+
+        /* HEADER TABLE */
+        .top-header {
+            width: 100%;
+        }
+
+        .top-header td {
+            vertical-align: top;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .job-title {
+            font-size: 13px;
+            margin-top: 4px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .profile-photo {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+
+        .contact-info p {
+            margin: 2px 0;
+            font-size: 11px;
+        }
+
+        .divider {
+            border-bottom: 1px solid black;
+            margin: 10px 0;
+        }
+
+        /* TWO COLUMN TABLE */
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .left-column {
+            width: 32%;
+            padding-right: 12px;
+            border-right: 0.6px solid #aaa;
+            vertical-align: top;
+        }
+
+        .right-column {
+            width: 68%;
+            padding-left: 12px;
+            vertical-align: top;
+        }
+
+        .block {
+            margin-bottom: 12px;
+        }
+
+        /* UPDATED HEADING SIZE */
+        .block h2 {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 0.6px solid black;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .block p {
+            font-size: 12px;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 15px;
+        }
+
+        ul li {
+            font-size: 12px;
+            margin-bottom: 4px;
+            line-height: 1.35;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="resume-wrapper">
+
+    <!-- HEADER -->
+    <table class="top-header">
+        <tr>
+            <td style="width:70%;">
+                <p class="name">{{ data.name }}</p>
+                <p class="job-title">{{ data.title }}</p>
+            </td>
+
+            <td style="width:30%; text-align:right;">
+                {% if data.photo %}
+                    <img src="{{ data.photo }}" class="profile-photo">
+                {% endif %}
+
+                <div class="contact-info">
+                    <p>{{ data.location }}</p>
+                    <p>{{ data.phone }}</p>
+                    <p>{{ data.email }}</p>
+                    <p>{{ data.linkedin }}</p>
+                    <p>{{ data.github }}</p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div class="divider"></div>
+
+    <!-- MAIN GRID -->
+    <table class="main-table">
+        <tr>
+
+            <!-- LEFT COLUMN -->
+            <td class="left-column">
+
+                <div class="block">
+                    <h2>Skills</h2>
+                    <ul>
+                        {% for skill in data.skills %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="block">
+                    <h2>Languages</h2>
+                    <ul>
+                        {% for lang in data.languages %}
+                            {% if lang.strip() %}
+                                <li>{{ lang }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="block">
+                    <h2>Certifications</h2>
+                    <ul>
+                        {% for cert in data.certifications.split('\n') %}
+                            {% if cert.strip() %}
+                                <li>{{ cert }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="block">
+                    <h2>Education</h2>
+                    <p>{{ data.education }}</p>
+                </div>
+
+            </td>
+
+            <!-- RIGHT COLUMN -->
+            <td class="right-column">
+
+                <div class="block">
+                    <h2>Summary</h2>
+                    <p>{{ data.summary }}</p>
+                </div>
+
+                <div class="block">
+                    <h2>Internships</h2>
+                    <ul>
+                        {% for intern in data.internships.split('\n') %}
+                            {% if intern.strip() %}
+                                <li>{{ intern }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="block">
+                    <h2>Projects</h2>
+                    <ul>
+                        {% for proj in data.projects.split('\n') %}
+                            {% if proj.strip() %}
+                                <li>{{ proj }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="block">
+                    <h2>Experience</h2>
+                    <ul>
+                        {% for exp in data.experience.split('\n') %}
+                            {% if exp.strip() %}
+                                <li>{{ exp }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </td>
+
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
