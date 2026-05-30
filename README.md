@@ -1,10 +1,10 @@
-Resume Builder Web Application
+# Resume Builder Web Application
 
-Overview
+## Overview
 
 Resume Builder is a web application developed using Flask (Python) that helps users create professional resumes through an intuitive and user-friendly interface. Users can enter their personal, educational, technical, and project details, preview their resume, and download it as a PDF.
 
-Features
+## Features
 
 - User-friendly resume creation form
 - Personal information section
@@ -15,19 +15,19 @@ Features
 - PDF resume generation
 - Clean and professional resume layout
 
-Tech Stack
+## Tech Stack
 
-Backend
+Backend :
 
 - Python
 - Flask
 
-Frontend
+Frontend :
 
 - HTML
 - CSS
 
-Installation
+## Installation
 
 1. Clone the repository
    
@@ -59,7 +59,7 @@ Installation
    
    http://127.0.0.1:5000
 
-Learning Outcomes
+## Learning Outcomes
 
 Through this project, I gained practical experience in:
 
@@ -69,7 +69,7 @@ Through this project, I gained practical experience in:
 - PDF generation
 - Frontend design and styling
 
-Future Enhancements
+## Future Enhancements
 
 - Multiple resume templates
 - User authentication
@@ -77,7 +77,7 @@ Future Enhancements
 - Resume sharing via public links
 - Advanced customization options
 
-Author
+# Author
 
 Niharika Chappa
 
