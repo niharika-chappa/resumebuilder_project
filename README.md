@@ -26,7 +26,6 @@ Frontend
 
 - HTML
 - CSS
-- Bootstrap
 
 Installation
 
