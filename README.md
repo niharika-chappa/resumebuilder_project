@@ -79,6 +79,6 @@ Through this project, I gained practical experience in:
 
 # Author
 
-Niharika Chappa
+**Niharika Chappa**
 
 B.Tech CSE Student | Python & Flask Developer
