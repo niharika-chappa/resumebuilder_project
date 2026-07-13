@@ -81,4 +81,4 @@ Through this project, I gained practical experience in:
 
 **Niharika Chappa**
 
-B.Tech CSE Student | Python & Flask Developer
+B.Tech CSE Student | Python & Flask Enthusiast
